@@ -1,0 +1,7 @@
+type Todo @model {
+  id: ID!
+  title: String!
+  description: String
+  status: String!
+  dueDate: AWSDate!
+}
