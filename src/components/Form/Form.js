@@ -24,13 +24,13 @@ const Form = ({ todoData, setInput }) => {
         value={todoData.dueDate}
         onChange={(e) => setInput('dueDate', e.target.value)}
       />
-      <select name="status" onChange={e => setInput('status', e.target.value)}>
-        <option selected value="NOTSTARTED">Not Started</option>
+      <select defaultValue="NOTSTARTED" name="status" onChange={e => setInput('status', e.target.value)}>
+        <option value="NOTSTARTED">Not Started</option>
         <option value="INPROGRESS">In Progress</option>
         <option value="COMPLETE">Complete</option>
         <option value="ONHOLD">On Hold</option>
       </select>
-      <button type="submit">Create Todo</button>
+      <button className="submit-btn" onClick={e => console.log("submitted")}>Create Todo</button>
     </form>
   )
 }
