@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Form = ({ todoData, setInput, dueDate, setDueDate }) => {
+const Form = ({ todoData, setInput }) => {
   return (
     <form>
       <input
