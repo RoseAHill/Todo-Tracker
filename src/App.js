@@ -1,5 +1,5 @@
 import './App.css';
-import FormHeader from './components/FormHeader'
+import FormHeader from './components/Form/FormHeader'
 
 // Amplify imports
 import Amplify from '@aws-amplify/core'
