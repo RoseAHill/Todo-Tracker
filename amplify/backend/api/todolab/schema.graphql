@@ -3,5 +3,5 @@ type Todo @model {
   title: String!
   description: String
   status: String!
-  dueDate: String!
+  dueDate: String
 }
