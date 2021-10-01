@@ -1,8 +1,6 @@
-import React, {useState} from 'react'
+import React from 'react'
 
-// Date picker docs: https://mcdatepicker.netlify.app/
-
-const Form = ({ startDate, setStartDate }) => {
+const Form = ({ todoData, setInput, dueDate, setDueDate }) => {
   return (
     <form>
       <input
@@ -10,23 +8,28 @@ const Form = ({ startDate, setStartDate }) => {
         name="title"
         placeholder="Title"
         required
-        value=""
-        onChange={e => console.log('title', e.target.value)}
+        value={todoData.title}
+        onChange={e => setInput('title', e.target.value)}
       />
       <input
         type="text"
         name="description"
         placeholder="Description"
-        value=""
-        onChange={e => console.log('title', e.target.value)}
+        value={todoData.description}
+        onChange={e => setInput('description', e.target.value)}
       />
-      <select name="status" onChange={e => console.log('status', e.target.value)}>
+      <input
+        type="date"
+        name="dueDate"
+        value={todoData.dueDate}
+        onChange={(e) => setInput('dueDate', e.target.value)}
+      />
+      <select name="status" onChange={e => setInput('status', e.target.value)}>
         <option selected value="NOTSTARTED">Not Started</option>
         <option value="INPROGRESS">In Progress</option>
         <option value="COMPLETE">Complete</option>
         <option value="ONHOLD">On Hold</option>
       </select>
-      
       <button type="submit">Create Todo</button>
     </form>
   )

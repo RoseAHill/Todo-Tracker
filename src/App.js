@@ -1,4 +1,5 @@
 import './App.css';
+import FormHeader from './components/FormHeader'
 
 // Amplify imports
 import Amplify from '@aws-amplify/core'
@@ -11,6 +12,7 @@ const App = () => {
       <header>
         <h1>Task Tracker</h1>
       </header>
+      <FormHeader />
     </div>
   );
 }
