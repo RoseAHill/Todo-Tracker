@@ -2,12 +2,12 @@ import { API, graphqlOperation } from 'aws-amplify'
 import { createTodo } from '../graphql/mutations'
 import { listTodos } from '../graphql/queries'
 
-export const fetchTodos = async () => {
+export const getTodoList = async () => {
   try {
     const todoData = await API.graphql(graphqlOperation(listTodos))
     const todos = todoData.data.listTodos.items
     return todos
-  } catch (err) { console.error('error fetching todos')}
+  } catch (err) { console.error('error getting todos')}
 }
 
 export const addTodo = async (todoData) => {

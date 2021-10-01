@@ -1,27 +1,27 @@
 import React from 'react'
 
-const Form = ({ todoData, setInput }) => {
+const Form = ({ todoForm, setInput, submitTodo }) => {
   return (
-    <form>
+    <form onSubmit={submitTodo}>
       <input
         type="text"
         name="title"
         placeholder="Title"
         required
-        value={todoData.title}
+        value={todoForm.title}
         onChange={e => setInput('title', e.target.value)}
       />
       <input
         type="text"
         name="description"
         placeholder="Description"
-        value={todoData.description}
+        value={todoForm.description}
         onChange={e => setInput('description', e.target.value)}
       />
       <input
         type="date"
         name="dueDate"
-        value={todoData.dueDate}
+        value={todoForm.dueDate}
         onChange={(e) => setInput('dueDate', e.target.value)}
       />
       <select defaultValue="NOTSTARTED" name="status" onChange={e => setInput('status', e.target.value)}>
@@ -30,7 +30,7 @@ const Form = ({ todoData, setInput }) => {
         <option value="COMPLETE">Complete</option>
         <option value="ONHOLD">On Hold</option>
       </select>
-      <button className="submit-btn" onClick={e => console.log("submitted")}>Create Todo</button>
+      <button type="submit">Create Todo</button>
     </form>
   )
 }
