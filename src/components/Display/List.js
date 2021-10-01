@@ -1,17 +1,8 @@
-import React, { useEffect, useState } from "react";
-import ToDo from "./ToDo";
+import React from "react"
+import ToDo from "./ToDo"
 
-// api calls are stored in a service file
-import { fetchTodos } from "../../services/todoServices";
-
-const List = (props) => {
-  const [todos, setTodos] = useState([]);
-
-  useEffect(() => {
-    setTodos(fetchTodos())
-  }, [])
-
-  if (todos.length) {
+const List = ({ todos }) => {
+  if (todos && todos.length > 0) {
     return (
       <div className="todo-list">
         {
@@ -32,7 +23,6 @@ const List = (props) => {
   }
   return (
     <div className="empty-list">
-      <h3>No todos yet!</h3>
     </div>
   )
 }

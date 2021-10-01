@@ -1,28 +1,39 @@
 import React, { useState } from 'react'
 import Form from './Form'
 
+// api calls are stored in a service file
+import { addTodo } from "../../services/todoServices"
+
+// The default empty text for the form
 const initialState = {
   title: '',
   description: '',
   status: 'NOTSTARTED',
-  dueDate: new Date(),
+  dueDate: '',
 }
 
-const FormHeader = () => {
-  const [dueDate, setDueDate] = useState(new Date())
-  const [todoData, setTodoData] = useState(initialState)
+const FormHeader = ({ todos, setTodos }) => {
+  const [todoForm, setTodoForm] = useState(initialState)
 
+  // setting the corresponding field with the new changed data
   const setInput = (key, value) => {
-    setTodoData({ ...todoData, [key]: value })
+    setTodoForm({ ...todoForm, [key]: value })
+  }
+
+  // uses the addTodo from the api services to add the todo to the database
+  const submitTodo = (e) => {
+    e.preventDefault()
+    try {
+      addTodo(todoForm)
+    } catch (err) { console.error('error submitting todo', err) }
   }
 
   return (
     <div className="form-wrapper">
       <Form
-        todoData={todoData}
+        todoForm={todoForm}
         setInput={setInput}
-        dueDate={dueDate}
-        setDueDate={setDueDate}
+        submitTodo={submitTodo}
       />
     </div>
   )
