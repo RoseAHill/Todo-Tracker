@@ -39,14 +39,6 @@ a {
   color: var(--task-green);
 }
 
-.button {
-  background-color: var(--task-black);
-  color: var(--task-white);
-  outline: none;
-  font-size: 1.8rem;
-  padding: 1.2rem 0;
-}
-
 .content {
   width: 40rem;
   margin: 0 auto;
@@ -54,12 +46,4 @@ a {
   flex-direction: column;
   justify-content: center;
   padding: 2rem;
-}
-
-.input {
-  border: none;
-  background-color: #ddd;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  font-size: 1.8rem;
 }
