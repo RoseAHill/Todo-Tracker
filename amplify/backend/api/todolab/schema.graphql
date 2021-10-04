@@ -1,5 +1,5 @@
 type Todo @model
-  @key(name: "todosByStatus", fields: ["status"], queryField: "todosByStatus")
+  @key(name: "todosByStatus", fields: ["type", "status"], queryField: "todosByStatus")
   @key(name: "todosByDate", fields: ["type", "dueDate"], queryField: "todosByDate")
   @key(name: "todosByTitle", fields: ["type", "title"], queryField: "todosByTitle") {
   id: ID!

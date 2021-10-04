@@ -5,6 +5,7 @@ export const onCreateTodo = /* GraphQL */ `
   subscription OnCreateTodo {
     onCreateTodo {
       id
+      type
       title
       description
       status
@@ -18,6 +19,7 @@ export const onUpdateTodo = /* GraphQL */ `
   subscription OnUpdateTodo {
     onUpdateTodo {
       id
+      type
       title
       description
       status
@@ -31,6 +33,7 @@ export const onDeleteTodo = /* GraphQL */ `
   subscription OnDeleteTodo {
     onDeleteTodo {
       id
+      type
       title
       description
       status
