@@ -1,38 +1,23 @@
 /* src/App.js */
 import './App.css'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Amplify from 'aws-amplify'
 import { withAuthenticator } from '@aws-amplify/ui-react'
 import {
-  fetchTodosByDate as byDate,
-  fetchTodosByStatus as byStatus,
-  fetchTodosByTitle as byTitle,
   sendTodo,
   initialState,
-  readableStatus
 } from './services/todoService'
 
 import awsExports from "./aws-exports"
+import List from './components/list/ListHandler'
 Amplify.configure(awsExports)
 
 const App = () => {
   const [formState, setFormState] = useState(initialState)
   const [todos, setTodos] = useState([])
-  const [sortDirection, setSortDirection] = useState('ASC')
-  
-  useEffect(() => {
-    fetchTodos(byDate, 'ASC')
-  }, [])
   
   const setInput = (key, value) => {
     setFormState({ ...formState, [key]: value })
-  }
-  
-  const fetchTodos = async (sortType, direction) => {
-    try {
-      const todos = await sortType(direction)
-      setTodos(todos)
-    } catch (err) { console.error('error fetching todos', err) }
   }
   
   const addTodo = async () => {
@@ -81,18 +66,7 @@ const App = () => {
         <option value="ONHOLD">On Hold</option>
       </select>
       <button className='button' onClick={() => addTodo()}>Create Todo</button>
-      {
-        todos.map((todo, index) => (
-          <div key={todo.id ? todo.id : index} className='todo'>
-            <h2 className='todo-title'>{todo.title}</h2>
-            <p className='todo-description'>{todo.description}</p>
-            <div className="todo-details">
-              <p>Due: {todo.dueDate || "N/A"}</p>
-              <h3 className={todo.status}>{todo.status ? readableStatus[todo.status] : "[Not Assigned]"}</h3>
-            </div>
-          </div>
-        ))
-      }
+      <List todos={todos} setTodos={setTodos} />
     </div>
   )
 }
