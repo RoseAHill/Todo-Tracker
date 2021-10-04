@@ -83,10 +83,10 @@ a {
   justify-content: space-between;
 }
 
-.COMPLETE {
-  color: var(--task-green);
+.due {
+  color: var(--task-orange)
 }
 
-.NOTSTARTED {
-  color: var(--task-orange)
+.COMPLETE {
+  color: var(--task-green);
 }
