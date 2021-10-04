@@ -1,7 +1,11 @@
-type Todo @model {
+type Todo @model
+  @key(name: "todosByStatus", fields: ["status"], queryField: "todosByStatus")
+  @key(name: "todosByDate", fields: ["type", "dueDate"], queryField: "todosByDate")
+  @key(name: "todosByTitle", fields: ["type", "title"], queryField: "todosByTitle") {
   id: ID!
+  type: String!
   title: String!
   description: String
   status: String!
-  dueDate: String
+  dueDate: String!
 }
