@@ -36,7 +36,7 @@ export const fetchTodosByDate = async (direction) => {
 
 export const fetchTodosByStatus = async (direction) => {
   try {
-    const todoData = await API.graphql(graphqlOperation(todosByStatus, {sortDirection: direction}))
+    const todoData = await API.graphql(graphqlOperation(todosByStatus, {type: "Todo", sortDirection: direction}))
     return await todoData.data.todosByStatus.items
   } catch (err) {
     console.error('service error getting todos by status:', err)
@@ -45,7 +45,7 @@ export const fetchTodosByStatus = async (direction) => {
 
 export const fetchTodosByTitle = async (direction) => {
   try {
-    const todoData = await API.graphql(graphqlOperation(todosByTitle, {sortDirection: direction}))
+    const todoData = await API.graphql(graphqlOperation(todosByTitle, {type: "Todo", sortDirection: direction}))
     return await todoData.data.todosByTitle.items
   } catch (err) {
     console.error('service error getting todos by status:', err)
