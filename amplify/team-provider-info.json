@@ -10,6 +10,11 @@
       "StackName": "amplify-todolab-dev-114115",
       "StackId": "arn:aws:cloudformation:us-east-1:613922475021:stack/amplify-todolab-dev-114115/051089a0-22ce-11ec-8110-12db6a1ac8c3",
       "AmplifyAppId": "d3pnlj3x0lr0jr"
+    },
+    "categories": {
+      "auth": {
+        "todolabbb274564": {}
+      }
     }
   }
 }
