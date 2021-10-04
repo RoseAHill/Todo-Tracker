@@ -1,0 +1,26 @@
+.todo {
+  margin-bottom: 1.5rem;
+}
+
+.todo-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.todo-description {
+  margin-bottom: 0;
+}
+
+.todo-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.due {
+  color: var(--task-orange)
+}
+
+.COMPLETE {
+  color: var(--task-green);
+}

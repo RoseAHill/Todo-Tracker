@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Todo = ({todoId, title, description,dueDate, status, readableStatus }) => {
+const Todo = ({ title, description,dueDate, status, readableStatus }) => {
   const today = new Date()
   const dueWhen = new Date(dueDate)
 

@@ -34,7 +34,7 @@ const App = () => {
 
   
   return (
-    <div className='container'>
+    <div className='content'>
       <h2>Task Tracker</h2>
       <input
         required

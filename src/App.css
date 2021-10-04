@@ -47,7 +47,7 @@ a {
   padding: 1.2rem 0;
 }
 
-.container {
+.content {
   width: 40rem;
   margin: 0 auto;
   display: flex;
@@ -56,37 +56,10 @@ a {
   padding: 2rem;
 }
 
-.todo {
-  margin-bottom: 1.5rem;
-}
-
 .input {
   border: none;
   background-color: #ddd;
   margin-bottom: 1rem;
   padding: 1rem;
   font-size: 1.8rem;
-}
-
-.todo-title {
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-.todo-description {
-  margin-bottom: 0;
-}
-
-.todo-details {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.due {
-  color: var(--task-orange)
-}
-
-.COMPLETE {
-  color: var(--task-green);
 }
