@@ -20,7 +20,7 @@ const ToDoForm = ({ todos, setTodos }) => {
       setFormState(initialState)
       await sendTodo(todo)
     } catch (err) {
-      console.log('error creating todo:', err)
+      console.error('error creating todo:', err)
     }
   }
 
