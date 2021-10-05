@@ -1,5 +1,5 @@
 import { API, graphqlOperation } from 'aws-amplify'
-import { createTodo } from '../graphql/mutations'
+import { createTodo, deleteTodo } from '../graphql/mutations'
 import { todosByDate, todosByStatus, todosByTitle } from '../graphql/queries'
 
 export const initialState = {
@@ -15,14 +15,6 @@ export const readableStatus = {
   "INPROGRESS": "In-progress",
   "COMPLETE": "Complete",
   "ONHOLD": "On Hold"
-}
-
-export const sendTodo = async (todo) => {
-  try {
-    await API.graphql(graphqlOperation(createTodo, {input: todo}))
-  } catch (err) {
-    console.error('service error adding todo:', err)
-  }
 }
 
 export const fetchTodosByDate = async (direction) => {
@@ -49,5 +41,22 @@ export const fetchTodosByTitle = async (direction) => {
     return await todoData.data.todosByTitle.items
   } catch (err) {
     console.error('service error getting todos by status:', err)
+  }
+}
+
+export const sendTodo = async (todo) => {
+  try {
+    await API.graphql(graphqlOperation(createTodo, {input: todo}))
+  } catch (err) {
+    console.error('service error adding todo:', err)
+  }
+}
+
+export const removeTodo = async (todoId) => {
+  try {
+    const todoData = await API.graphql(graphqlOperation(deleteTodo, {input: {id: todoId}}))
+    return await todoData.data.deleteTodo.id
+  } catch (err) {
+    console.error('service error deleting todo', err)
   }
 }

@@ -4,10 +4,11 @@ import {
   fetchTodosByDate as byDate,
   fetchTodosByStatus as byStatus,
   fetchTodosByTitle as byTitle,
-  readableStatus
+  readableStatus,
+  removeTodo
 } from '../../services/todoService'
 import SortingButtons from './SortingButtons'
-import Todo from './Todo'
+import Todo from '../todos/Todo'
 import ToDoForm from '../form/ToDoForm'
 
 const sortByCallbacks = [byDate, byStatus, byTitle]
@@ -23,6 +24,12 @@ const List = ({ todos, setTodos }) => {
     } catch (err) { console.error('error fetching todos', err) }
   }
 
+  const deleteRefresh = async (id) => {
+    const deletedTodo = await removeTodo(id)
+    const newTodos = todos.filter(todo => todo.id !== deletedTodo)
+    setTodos(newTodos)
+  }
+
   useEffect(() => {
     fetchTodos(sortDirection)
   }, [])
@@ -30,7 +37,7 @@ const List = ({ todos, setTodos }) => {
   useEffect(() => {
     fetchTodos(sortDirection)
   }, [sortByIndex, sortDirection])
-  
+
   return (
     <div className="list">
       <SortingButtons setSortByIndex={setSortByIndex} sortDirection={sortDirection} setSortDirection={setSortDirection} />
@@ -39,6 +46,7 @@ const List = ({ todos, setTodos }) => {
         {
           todos.map((todo, index) => (
             <Todo
+              deleteRefresh={deleteRefresh}
               key={todo.id || index}
               todoId={todo.id}
               title={todo.title}
@@ -46,6 +54,7 @@ const List = ({ todos, setTodos }) => {
               dueDate={todo.dueDate || "not set"}
               status={todo.status || "UNKNOWN"}
               readableStatus={readableStatus[todo.status] || "Unknown"}
+              setSortDirection={setSortDirection}
             />
           ))
         }

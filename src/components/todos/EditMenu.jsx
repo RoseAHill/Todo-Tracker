@@ -1,9 +1,7 @@
 import React from 'react'
 import { Dropdown } from 'react-bootstrap'
 
-const EditMenu = ({ todoId }) => {
-
-
+const EditMenu = ({ todoId, deleteRefresh }) => {
   return (
     <Dropdown>
       <Dropdown.Toggle variant="success-outline" id={`edit-${todoId}`}>
@@ -13,7 +11,7 @@ const EditMenu = ({ todoId }) => {
         <Dropdown.Item>Complete</Dropdown.Item>
         <Dropdown.Item>In-progress</Dropdown.Item>
         <Dropdown.Item>On Hold</Dropdown.Item>
-        <Dropdown.Item className="delete-color">Delete</Dropdown.Item>
+        <Dropdown.Item onClick={() => deleteRefresh(todoId)} className="delete-color">Delete</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
   )
