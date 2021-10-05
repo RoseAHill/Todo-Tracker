@@ -6,7 +6,6 @@ import { withAuthenticator } from '@aws-amplify/ui-react'
 
 import awsExports from "./aws-exports"
 import List from './components/list/ListHandler'
-import ToDoForm from './components/form/ToDoForm'
 Amplify.configure(awsExports)
 
 const App = () => {
