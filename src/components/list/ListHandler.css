@@ -1,5 +1,45 @@
+.list {
+  max-width: 75vw;
+  margin: 2rem auto;
+}
+
+.list-menu {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right:0;
+}
+
+.list-menu * {
+  font-size: 1.5rem;
+}
+
+.todo-list {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
 .todo {
-  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 30rem;
+  height: 30rem;
+  margin: 2rem;
+  padding: 4rem 3rem;
+  border-radius: 50px;
+  background: var(--task-green);
+  box-shadow:  11px 11px 22px #709b86,
+               -11px -11px 22px #92c9ae;
+}
+
+.todo-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .todo-title {
@@ -11,16 +51,32 @@
   margin-bottom: 0;
 }
 
+.status {
+  font-family: var(--task-font-title);
+  size: 2rem;
+  font-weight: bold;
+}
+
 .todo-details {
+  color: var(--task-white);
+  padding-top: 4rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
 .due {
-  color: var(--task-orange)
+  color: var(--task-yellow)
 }
 
 .COMPLETE {
-  color: var(--task-green);
+  color: var(--task-blue);
+}
+
+.edit-menu {
+  background-color: var(--task-white);
+}
+
+.delete-color {
+  color: var(--task-orange);
 }

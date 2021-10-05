@@ -15,15 +15,21 @@
   --task-yellow: #F2CC8F;
   --task-orange: #E07A5F;
   --task-green: #81B29A;
+  --task-blue: #2D6976;
+  --bs-blue: #2D6976;
   /* Style */
   --task-font-title: 'Comfortaa', cursive;
   --task-font-text: 'Open Sans', sans-serif;
 }
 
+html, body, body > * {
+  height: 100vh
+}
+
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
   Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  background-color: var(--task-white);
+  background-color: var(--task-green);
   color: var(--task-black);
   font-family: var(--task-font-text);
   font-size: 1.5rem;
@@ -40,10 +46,10 @@ a {
 }
 
 .content {
-  width: 40rem;
+  position: relative;
+  height: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2rem;
 }

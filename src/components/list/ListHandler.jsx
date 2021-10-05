@@ -8,6 +8,7 @@ import {
 } from '../../services/todoService'
 import SortingButtons from './SortingButtons'
 import Todo from './Todo'
+import ToDoForm from '../form/ToDoForm'
 
 const sortByCallbacks = [byDate, byStatus, byTitle]
 
@@ -28,23 +29,27 @@ const List = ({ todos, setTodos }) => {
 
   useEffect(() => {
     fetchTodos(sortDirection)
-  }, [sortByIndex])
+  }, [sortByIndex, sortDirection])
   
   return (
     <div className="list">
       <SortingButtons setSortByIndex={setSortByIndex} sortDirection={sortDirection} setSortDirection={setSortDirection} />
-      {
-        todos.map((todo, index) => (
-          <Todo
-            key={todo.id || index}
-            title={todo.title}
-            description={todo.description}
-            dueDate={todo.dueDate || "not set"}
-            status={todo.status || "UNKNOWN"}
-            readableStatus={readableStatus[todo.status] || "Unknown"}
-          />
-        ))
-      }
+      <div className="todo-list">
+        <ToDoForm todos={todos} setTodos={setTodos} />
+        {
+          todos.map((todo, index) => (
+            <Todo
+              key={todo.id || index}
+              todoId={todo.id}
+              title={todo.title}
+              description={todo.description}
+              dueDate={todo.dueDate || "not set"}
+              status={todo.status || "UNKNOWN"}
+              readableStatus={readableStatus[todo.status] || "Unknown"}
+            />
+          ))
+        }
+      </div>
     </div>
   )
 }

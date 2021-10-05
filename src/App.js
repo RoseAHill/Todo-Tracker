@@ -14,7 +14,6 @@ const App = () => {
   
   return (
     <div className='content'>
-      <ToDoForm todos={todos} setTodos={setTodos} />
       <List todos={todos} setTodos={setTodos} />
     </div>
   )

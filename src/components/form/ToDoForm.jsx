@@ -25,8 +25,7 @@ const ToDoForm = ({ todos, setTodos }) => {
   }
 
   return (
-    <form>
-      <h2>Add Task</h2>
+    <form className="new-task">
       <input
         required
         name="title"

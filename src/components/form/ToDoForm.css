@@ -1,19 +1,30 @@
-form > * {
-  width: 100%;
+.new-task {
+  width: 30rem;
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2rem;
+  padding: 2rem 3rem;
+  border-radius: 30px;
+  border-radius: 30px;
+  background: var(--task-green);
+  box-shadow:  11px 11px 22px #709b86,
+               -11px -11px 22px #92c9ae;
 }
 
 .button {
   background-color: var(--task-black);
   color: var(--task-white);
   outline: none;
-  font-size: 1.8rem;
-  padding: 1.2rem 0;
+  font-size: 1.5rem;
+  padding: .5rem 0;
 }
 
 .input {
   border: none;
-  background-color: #ddd;
+  background-color: #92c9ae;
   margin-bottom: 1rem;
-  padding: 1rem;
-  font-size: 1.8rem;
+  padding: .5rem;
+  font-size: 1.5rem;
 }
