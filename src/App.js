@@ -6,7 +6,6 @@ import { withAuthenticator } from '@aws-amplify/ui-react'
 import List from './components/list/ListHandler'
 
 import './App.css'
-import './components/auth/auth.css'
 
 import awsExports from "./aws-exports"
 Amplify.configure(awsExports)

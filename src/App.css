@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans&display=swap');
 
 :root {
-  font-size: 62.5%;
+  /* font-size: 62.5%; */
   /* Color Pallette */
   --task-black: #3D405B;
   --task-white: #F4F1DE;
@@ -11,18 +11,18 @@
   --task-blue: #2D6976;
   /* replace boostrap blue */
   --bs-blue: #2D6976;
-  /* Amplify styling overrides */
-  --amplify-text-xxs:	1rem;
+  /* Amplify styling overrides for 62.5% base font-size */
+  /* --amplify-text-xxs:	1rem;
   --amplify-text-xs:	1.2rem;
   --amplify-text-sm:	1.25rem;
   --amplify-text-md:	1.5rem;
   --amplify-text-lg:	2rem;
   --amplify-text-xl:	2.5rem;
-  --amplify-text-xxl:	3rem;
+  --amplify-text-xxl:	3rem; */
   /* according to the docs this should work to resize auth containers...*/
-  /* but it doesn't... */
-  --min-width: 40rem;
-  --width: 40rem;
+  /* but it doesn't... (meant for 62.5%) */
+  /* --min-width: 40rem;
+  --width: 40rem; */
   /* Style */
   --task-font-title: 'Comfortaa', cursive;
   --task-font-text: 'Open Sans', sans-serif;
@@ -33,7 +33,7 @@
 *::after {
   /* All ::after pseudo-elements */
   box-sizing: border-box;
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
 }
 
 html, body, body > * {
@@ -46,10 +46,11 @@ body {
   background-color: var(--task-green);
   color: var(--task-black);
   font-family: var(--task-font-text);
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
 }
 
 h1, h2, h3 {
+  font-size: 1.25rem;
   font-family: var(--task-font-title);
   font-weight: 800;
 }
@@ -67,6 +68,6 @@ a {
   flex-direction: column;
 }
 
-amplify-button {
+/* amplify-button {
   --padding: .5rem;
-}
+} */
