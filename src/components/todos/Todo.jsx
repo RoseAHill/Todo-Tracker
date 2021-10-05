@@ -1,8 +1,8 @@
 import React from 'react'
-import { Dropdown } from 'react-bootstrap'
-import EditMenu from '../todos/EditMenu'
+import { Badge } from 'react-bootstrap'
+import EditMenu from './EditMenu'
 
-const Todo = ({ todoId, title, description, dueDate, status, readableStatus }) => {
+const Todo = ({ todoId, title, description, dueDate, status, readableStatus, deleteRefresh }) => {
   const today = new Date()
   const dueWhen = new Date(dueDate)
 
@@ -10,7 +10,12 @@ const Todo = ({ todoId, title, description, dueDate, status, readableStatus }) =
     <div className="todo">
       <div className="todo-top">
         <h2 className='todo-title'>{title}</h2>
-        <EditMenu todoId={todoId} />
+        {
+          todoId ?
+            <EditMenu todoId={todoId} deleteRefresh={deleteRefresh} />
+          : 
+          <Badge bg="secondary">New</Badge>
+        }
       </div>
       <p className='todo-description'>{description}</p>
       <div className={today >= dueWhen && status !== 'COMPLETE' ? `todo-details due` : `todo-details`}>
