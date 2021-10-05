@@ -9,7 +9,20 @@
   --task-orange: #E07A5F;
   --task-green: #81B29A;
   --task-blue: #2D6976;
+  /* replace boostrap blue */
   --bs-blue: #2D6976;
+  /* Amplify styling overrides */
+  --amplify-text-xxs:	1rem;
+  --amplify-text-xs:	1.2rem;
+  --amplify-text-sm:	1.25rem;
+  --amplify-text-md:	1.5rem;
+  --amplify-text-lg:	2rem;
+  --amplify-text-xl:	2.5rem;
+  --amplify-text-xxl:	3rem;
+  /* according to the docs this should work to resize auth containers...*/
+  /* but it doesn't... */
+  --min-width: 40rem;
+  --width: 40rem;
   /* Style */
   --task-font-title: 'Comfortaa', cursive;
   --task-font-text: 'Open Sans', sans-serif;
