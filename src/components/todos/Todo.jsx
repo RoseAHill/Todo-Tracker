@@ -2,7 +2,7 @@ import React from 'react'
 import { Badge } from 'react-bootstrap'
 import EditMenu from './EditMenu'
 
-const Todo = ({ todoId, title, description, dueDate, status, readableStatus, deleteRefresh }) => {
+const Todo = ({ todoId, title, description, dueDate, status, readableStatus, deleteRefresh, changeStatus }) => {
   const today = new Date()
   const dueWhen = new Date(dueDate)
 
@@ -12,7 +12,7 @@ const Todo = ({ todoId, title, description, dueDate, status, readableStatus, del
         <h2 className='todo-title'>{title}</h2>
         {
           todoId ?
-            <EditMenu todoId={todoId} deleteRefresh={deleteRefresh} />
+            <EditMenu todoId={todoId} deleteRefresh={deleteRefresh} changeStatus={changeStatus} />
           : 
           <Badge bg="secondary">New</Badge>
         }

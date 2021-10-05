@@ -5,7 +5,8 @@ import {
   fetchTodosByStatus as byStatus,
   fetchTodosByTitle as byTitle,
   readableStatus,
-  removeTodo
+  removeTodo,
+  updateStatus,
 } from '../../services/todoService'
 import SortingButtons from './SortingButtons'
 import Todo from '../todos/Todo'
@@ -30,6 +31,12 @@ const List = ({ todos, setTodos }) => {
     setTodos(newTodos)
   }
 
+  const changeStatus = async (id, status) => {
+    const updatedTodo = await updateStatus(id, status)
+    const newTodos = todos.map(todo => todo.id !== id ? todo : updatedTodo)
+    setTodos(newTodos)
+  }
+
   useEffect(() => {
     fetchTodos(sortDirection)
   }, [])
@@ -47,6 +54,7 @@ const List = ({ todos, setTodos }) => {
           todos.map((todo, index) => (
             <Todo
               deleteRefresh={deleteRefresh}
+              changeStatus={changeStatus}
               key={todo.id || index}
               todoId={todo.id}
               title={todo.title}
