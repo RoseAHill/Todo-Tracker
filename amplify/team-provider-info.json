@@ -1,20 +1,26 @@
 {
-  "dev": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-todolab-dev-114115-authRole",
-      "UnauthRoleArn": "arn:aws:iam::613922475021:role/amplify-todolab-dev-114115-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::613922475021:role/amplify-todolab-dev-114115-authRole",
-      "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-todolab-dev-114115-deployment",
-      "UnauthRoleName": "amplify-todolab-dev-114115-unauthRole",
-      "StackName": "amplify-todolab-dev-114115",
-      "StackId": "arn:aws:cloudformation:us-east-1:613922475021:stack/amplify-todolab-dev-114115/051089a0-22ce-11ec-8110-12db6a1ac8c3",
-      "AmplifyAppId": "d3pnlj3x0lr0jr"
-    },
-    "categories": {
-      "auth": {
-        "todolabbb274564": {}
-      }
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-todolab-dev-114115-authRole",
+            "UnauthRoleArn": "arn:aws:iam::613922475021:role/amplify-todolab-dev-114115-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::613922475021:role/amplify-todolab-dev-114115-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-todolab-dev-114115-deployment",
+            "UnauthRoleName": "amplify-todolab-dev-114115-unauthRole",
+            "StackName": "amplify-todolab-dev-114115",
+            "StackId": "arn:aws:cloudformation:us-east-1:613922475021:stack/amplify-todolab-dev-114115/051089a0-22ce-11ec-8110-12db6a1ac8c3",
+            "AmplifyAppId": "d3pnlj3x0lr0jr"
+        },
+        "categories": {
+            "auth": {
+                "todolabbb274564": {}
+            },
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d3pnlj3x0lr0jr",
+                    "type": "manual"
+                }
+            }
+        }
     }
-  }
 }
