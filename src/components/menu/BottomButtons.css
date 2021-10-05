@@ -1,0 +1,27 @@
+.toolbar {
+  display: flex;
+  flex-flow: row nowrap;
+  position: sticky;
+  top: 0;
+}
+
+.bottom-buttons {
+  margin-left: auto;
+  top: 0;
+  position: sticky;
+}
+
+.sorting-buttons,
+.dropdown,
+.dropdown-toggle {
+  height: 100%;
+  margin: none;
+}
+
+.sorting-buttons i {
+  padding: .5rem;
+}
+
+.btn {
+  margin: auto;
+}

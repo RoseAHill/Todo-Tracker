@@ -1,14 +1,13 @@
 .list {
-  max-width: 75vw;
-  margin: 2rem auto;
+  position: absolute;
+  top: 0;
 }
 
 .list-menu {
   display: flex;
   justify-content: center;
-  position: absolute;
+  position: sticky;
   top: 0;
-  right:0;
 }
 
 .list-menu * {
@@ -17,9 +16,10 @@
 
 .todo-list {
   display: flex;
-  width: 100%;
+  justify-content: flex-start;
+  flex-flow: row wrap;
+  margin: 8rem 4rem;
   flex-wrap: wrap;
-  margin: auto;
 }
 
 .todo {
@@ -47,6 +47,7 @@
 }
 
 .todo-description {
+  padding-top: 1rem;
   margin-bottom: 0;
 }
 

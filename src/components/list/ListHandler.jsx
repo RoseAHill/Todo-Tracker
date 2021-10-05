@@ -8,9 +8,9 @@ import {
   removeTodo,
   updateStatus,
 } from '../../services/todoService'
-import SortingButtons from './SortingButtons'
 import Todo from '../todos/Todo'
 import ToDoForm from '../form/ToDoForm'
+import BottomButtons from '../menu/BottomButtons'
 
 const sortByCallbacks = [byDate, byStatus, byTitle]
 
@@ -46,8 +46,8 @@ const List = ({ todos, setTodos }) => {
   }, [sortByIndex, sortDirection])
 
   return (
+    <>
     <div className="list">
-      <SortingButtons setSortByIndex={setSortByIndex} sortDirection={sortDirection} setSortDirection={setSortDirection} />
       <div className="todo-list">
         <ToDoForm todos={todos} setTodos={setTodos} />
         {
@@ -68,6 +68,8 @@ const List = ({ todos, setTodos }) => {
         }
       </div>
     </div>
+    <BottomButtons setSortByIndex={setSortByIndex} sortDirection={sortDirection} setSortDirection={setSortDirection} />
+    </>
   )
 }
 
