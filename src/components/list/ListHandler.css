@@ -36,15 +36,14 @@
                -11px -11px 22px #92c9ae;
 }
 
-.todo-top {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.todo-top>* {
+  display: inline;
 }
 
 .todo-title {
   font-size: 2rem;
   font-weight: bold;
+  margin-right: 1rem;
 }
 
 .todo-description {
