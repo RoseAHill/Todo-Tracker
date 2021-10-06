@@ -39,7 +39,9 @@ export const fetchTodosByTitle = async (direction) => {
   try {
     const todoData = await API.graphql(graphqlOperation(todosByTitle, {type: "Todo", sortDirection: direction}))
     const todos = await todoData.data.todosByTitle.items
-    return todos.sort((todo1, todo2) =>  todo1.title.toLowerCase().localeCompare(todo2.title.toLowerCase()))
+    const ascTodos = todos.sort((todo1, todo2) =>  todo1.title.toLowerCase().localeCompare(todo2.title.toLowerCase()))
+    if (direction === 'DESC') return ascTodos.reverse()
+    else return ascTodos
   } catch (err) {
     console.error('service error getting todos by title:', err)
   }
