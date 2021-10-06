@@ -38,9 +38,10 @@ export const fetchTodosByStatus = async (direction) => {
 export const fetchTodosByTitle = async (direction) => {
   try {
     const todoData = await API.graphql(graphqlOperation(todosByTitle, {type: "Todo", sortDirection: direction}))
-    return await todoData.data.todosByTitle.items
+    const todos = await todoData.data.todosByTitle.items
+    return todos.sort((todo1, todo2) =>  todo1.title.toLowerCase().localeCompare(todo2.title.toLowerCase()))
   } catch (err) {
-    console.error('service error getting todos by status:', err)
+    console.error('service error getting todos by title:', err)
   }
 }
 
